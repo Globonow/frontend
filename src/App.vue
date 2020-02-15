@@ -1,18 +1,23 @@
 <template>
   <div id="app">
     <Container>
+      <Header />
+      <web-admin />
+      <Datepicker />
       <router-view />
     </Container>
   </div>
 </template>
 
 <script>
-import Container from './components/Container.vue';
+import Header from './components/Header.vue';
+import WebAdmin from './pages/WebAdmin.vue';
 
 export default {
   name: 'app',
   components: {
-    Container,
+    Header,
+    WebAdmin,
   },
 };
 </script>

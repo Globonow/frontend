@@ -1,6 +1,8 @@
 <template>
   <header>
-    <h1>Header</h1>
+    <div>
+      <img src="../assets/logoGloboNow.png" alt="GloboNOW Logo" class="logo" />
+    </div>
   </header>
 </template>
 
@@ -8,4 +10,12 @@
 export default {};
 </script>
 
-<style scoped></style>
+<style scoped>
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  padding: 30px;
+}
+</style>
