@@ -8,8 +8,18 @@ import {
   faTrash,
   faSpinner,
   faCircleNotch,
+  faChevronRight,
+  faImage,
 } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faGithub, faPlus, faTrash, faSpinner, faCircleNotch);
+library.add(
+  faGithub,
+  faPlus,
+  faTrash,
+  faSpinner,
+  faCircleNotch,
+  faChevronRight,
+  faImage
+);
 
 Vue.component('fa-icon', FontAwesomeIcon);

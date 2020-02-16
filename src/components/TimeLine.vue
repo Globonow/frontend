@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <Container>
       <div class="menucontainer">
         <div class="flashinfo"></div>
@@ -14,7 +14,10 @@ export default {};
 </script>
 
 <style logos>
+.menucontainer {
+  height: 100%;
+}
+
 .flashinfo {
 }
 </style>
-

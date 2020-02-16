@@ -1,11 +1,9 @@
 <template>
   <div id="app">
-    <Container>
-      <Header />
-      <web-admin />
-      <Datepicker />
-      <router-view />
-    </Container>
+    <Header />
+    <web-admin />
+    <!-- <Datepicker /> -->
+    <router-view />
   </div>
 </template>
 
@@ -39,9 +37,13 @@ export default {
 #root,
 html,
 body {
-  min-height: 100%;
+  height: 100%;
   background-color: $color1;
   color: $color2;
+}
+
+#app {
+  height: 100%;
 }
 
 body {

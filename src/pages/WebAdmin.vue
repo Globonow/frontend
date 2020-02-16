@@ -3,15 +3,35 @@
     <Container>
       <div class="menucontainer">
         <div class="column">
-          <div class="date dimensions">{{ new Date() }}</div>
-          <List />
+          <div class="date dimensions">
+            {{ new Date().toLocaleDateString() }}
+          </div>
+          <div class="list-items">
+            <ScheduleItem />
+            <ScheduleItem />
+            <ScheduleItem />
+            <ScheduleItem />
+            <ScheduleItem />
+            <ScheduleItem />
+            <ScheduleItem />
+            <ScheduleItem />
+            <ScheduleItem />
+            <ScheduleItem />
+            <ScheduleItem />
+            <ScheduleItem />
+          </div>
         </div>
         <div class="column">
-          <div class="on-wait dimensions">EM ESPERA</div>
+          <div class="dimensions">EM ESPERA</div>
+          <div class="list-items">
+            <AwaitingItem />
+            <AwaitingItem />
+            <AwaitingItem />
+          </div>
         </div>
 
         <div class="column">
-          <div class="timeline dimensions">LINHA DO TEMPO</div>
+          <div class="dimensions">LINHA DO TEMPO</div>
           <TimeLine />
         </div>
       </div>
@@ -21,13 +41,15 @@
 </template>
 
 <script>
-import List from '../components/List.vue';
+import ScheduleItem from '../components/ScheduleItem.vue';
+import AwaitingItem from '../components/AwaitingItem.vue';
 import TimeLine from '../components/TimeLine.vue';
 
 export default {
   name: 'app',
   components: {
-    List,
+    ScheduleItem,
+    AwaitingItem,
     TimeLine,
   },
 };
@@ -42,19 +64,28 @@ export default {
 }
 
 .dimensions {
-  height: 96px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 75px;
+  max-height: 75px;
   background-color: #333333;
   text-align: center;
   color: #efefef;
-  font-size: 1.8vw;
-  padding: 30px;
+  font-size: 20px;
+  padding: auto;
 }
 
 .column {
   display: flex;
   flex: 1;
+  background: #222222;
   flex-direction: column;
   margin-left: 6px;
   margin-right: 6px;
+}
+
+.list-items {
+  overflow: scroll;
 }
 </style>
