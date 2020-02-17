@@ -1,56 +1,54 @@
 <template>
-  <div id="app">
-    <Container>
-      <div class="menucontainer">
-        <div class="column">
-          <div class="date dimensions">
-            {{ new Date().toLocaleDateString() }}
-          </div>
-          <div class="list-items">
-            <ScheduleItem />
-            <ScheduleItem />
-            <ScheduleItem />
-            <ScheduleItem />
-            <ScheduleItem />
-            <ScheduleItem />
-            <ScheduleItem />
-            <ScheduleItem />
-            <ScheduleItem />
-            <ScheduleItem />
-            <ScheduleItem />
-            <ScheduleItem />
-          </div>
-        </div>
-        <div class="column">
-          <div class="dimensions">EM ESPERA</div>
-          <div class="list-items">
-            <AwaitingItem />
-            <AwaitingItem />
-            <AwaitingItem />
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="dimensions">LINHA DO TEMPO</div>
-          <TimeLine />
-        </div>
+  <div class="menucontainer">
+    <div class="column">
+      <div class="date dimensions">
+        {{ new Date().toLocaleDateString() }}
       </div>
-      <router-view />
-    </Container>
+      <div class="list-items">
+        <ScheduleItem show="Avenida Brasil" start="20:50" />
+        <ScheduleItem show="Avenida Brasil" start="20:45" />
+        <ScheduleItem show="Avenida Brasil" start="20:45" />
+        <ScheduleItem show="Avenida Brasil" start="20:45" />
+        <ScheduleItem show="Avenida Brasil" start="20:45" />
+        <ScheduleItem show="Avenida Brasil" start="20:45" />
+        <ScheduleItem show="Avenida Brasil" start="20:45" />
+        <ScheduleItem show="Avenida Brasil" start="20:45" />
+        <ScheduleItem show="Avenida Brasil" start="20:45" />
+        <ScheduleItem show="Avenida Brasil" start="20:45" />
+        <ScheduleItem show="Avenida Brasil" start="20:45" />
+      </div>
+    </div>
+    <div class="column">
+      <div class="dimensions">EM ESPERA</div>
+      <div class="list-items">
+        <NewCard />
+        <AwaitingItem />
+        <AwaitingItem />
+        <AwaitingItem />
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="dimensions">LINHA DO TEMPO</div>
+      <TimelineItem />
+    </div>
+    <router-view />
   </div>
 </template>
 
 <script>
 import ScheduleItem from '../components/ScheduleItem.vue';
 import AwaitingItem from '../components/AwaitingItem.vue';
-import TimeLine from '../components/TimeLine.vue';
+import TimelineItem from '../components/TimelineItem.vue';
+import NewCard from '../components/NewCard.vue';
 
 export default {
   name: 'app',
   components: {
     ScheduleItem,
     AwaitingItem,
-    TimeLine,
+    TimelineItem,
+    NewCard,
   },
 };
 </script>
@@ -59,6 +57,7 @@ export default {
 .menucontainer {
   display: flex;
   flex: 1;
+  height: 100%;
   flex-direction: row;
   background: linear-gradient(#494949, #1e1e1e);
 }

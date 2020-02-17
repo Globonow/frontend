@@ -1,19 +1,30 @@
 <template>
   <div>
     <div class="container">
-      <!-- <div class="header">
-        <div class="edit-image">Horário sugerido: 22:30</div>
-      </div> -->
+      <div class="header">
+        <font-awesome-icon class="icon" icon="image" />
+        <!-- <div class="edit-image">Adicionar Imagem</div> -->
+        <!-- <label for="img">Select image:</label> -->
+        <input
+          class="edit-image"
+          type="file"
+          @change="onFileSelected"
+          accept="image/*"
+        />
+      </div>
+      <input
+        class="edit-image"
+        type="time"
+        @change="onTimeSelected"
+        accept="image/*"
+      />
       <div class="description margin-vertical">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae cumque
-        temporibus necessitatibus dolor, repellendus aliquam numquam quibusdam
-        esse adipisci voluptatum recusandae doloribus possimus, dolore
-        provident. Quos consequuntur autem consectetur minus.
+        <textarea name="" id="text-card" cols="105" rows="6"></textarea>
       </div>
       <div class="image-container">
-        <img class="image" src="../assets/avenidaBrasilLogo.jpg" alt="logo" />
+        <!-- <img class="image" src="../assets/avenidaBrasilLogo.jpg" alt="logo" /> -->
         <div class="button-container">
-          <div class="send-button">ENVIAR</div>
+          <div class="send-button">ADICIONAR</div>
         </div>
       </div>
     </div>
@@ -27,12 +38,25 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
-export default {};
+export default {
+  name: 'NewCard',
+  data() {
+    return {
+      selectedFile: null,
+    };
+  },
+  methods: {
+    onFileSelected(event) {
+      this.selectedFile = event.target.files[0];
+    },
+    onTimeSelected() {},
+  },
+};
 </script>
 
 <style scoped>
 .margin-vertical {
-  margin-top: 18px;
+  margin-top: 14px;
   margin-bottom: 18px;
 }
 
@@ -53,13 +77,22 @@ export default {};
   display: flex;
   width: 100%;
   text-align: left;
-  align-items: center;
-  justify-content: space-between;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  width: 100%;
+  font-size: 16px;
+  padding: 12px;
 }
 
 .button-container {
   margin: 0 auto;
-  margin-top: 14px;
   padding-top: 8px;
   padding-bottom: 8px;
   background: linear-gradient(#494949, #1e1e1e);
@@ -73,9 +106,14 @@ export default {};
   color: #00ff80;
 }
 
+.icon {
+  font-size: 18px;
+  color: #00ff80;
+}
+
 .edit-image {
   font-size: 16px;
-  font-weight: bold;
+  margin-left: 12px;
 }
 
 .description {
@@ -87,6 +125,7 @@ export default {};
   width: 100%;
   height: auto;
   border-radius: 8px;
+  margin-bottom: 14px;
   background-image: url('../assets/avenidaBrasilLogo.jpg');
   background-position: center;
   background-repeat: no-repeat;

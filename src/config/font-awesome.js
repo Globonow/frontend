@@ -10,6 +10,7 @@ import {
   faCircleNotch,
   faChevronRight,
   faImage,
+  faBolt,
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -19,7 +20,8 @@ library.add(
   faSpinner,
   faCircleNotch,
   faChevronRight,
-  faImage
+  faImage,
+  faBolt
 );
 
 Vue.component('fa-icon', FontAwesomeIcon);

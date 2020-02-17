@@ -7,8 +7,8 @@
           src="../assets/avenidaBrasilLogo.jpg"
           alt="logo"
         />
-        <div class="hour margin-horizontal">20:45</div>
-        <div class="programation-name margin-horizontal">AVENIDA BRASIL</div>
+        <div class="hour margin-horizontal">{{ start }}</div>
+        <div class="show-name margin-horizontal">{{ show }}</div>
       </div>
       <div class="icon-container">
         <font-awesome-icon class="icon" icon="chevron-right" />
@@ -24,7 +24,9 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
-export default {};
+export default {
+  props: ['show', 'start'],
+};
 </script>
 
 <style scoped>
@@ -69,8 +71,9 @@ export default {};
   font-size: 16px;
 }
 
-.programation-name {
+.show-name {
   font-size: 16px;
+  text-transform: uppercase;
 }
 
 .icon-container {

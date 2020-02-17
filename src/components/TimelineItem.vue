@@ -1,9 +1,10 @@
 <template>
   <div>
     <div class="container">
-      <!-- <div class="header">
-        <div class="edit-image">Horário sugerido: 22:30</div>
-      </div> -->
+      <div class="header">
+        <font-awesome-icon class="icon" icon="bolt" />
+        <div class="edit-image">agora</div>
+      </div>
       <div class="description margin-vertical">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae cumque
         temporibus necessitatibus dolor, repellendus aliquam numquam quibusdam
@@ -12,9 +13,6 @@
       </div>
       <div class="image-container">
         <img class="image" src="../assets/avenidaBrasilLogo.jpg" alt="logo" />
-        <div class="button-container">
-          <div class="send-button">ENVIAR</div>
-        </div>
       </div>
     </div>
     <router-view />
@@ -32,7 +30,7 @@ export default {};
 
 <style scoped>
 .margin-vertical {
-  margin-top: 18px;
+  margin-top: 14px;
   margin-bottom: 18px;
 }
 
@@ -54,28 +52,16 @@ export default {};
   width: 100%;
   text-align: left;
   align-items: center;
-  justify-content: space-between;
 }
 
-.button-container {
-  margin: 0 auto;
-  margin-top: 14px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  background: linear-gradient(#494949, #1e1e1e);
-  border-radius: 28px;
-  border: 1px solid #00ff80;
-  width: 160px;
-}
-
-.send-button {
+.icon {
   font-size: 18px;
   color: #00ff80;
 }
 
 .edit-image {
   font-size: 16px;
-  font-weight: bold;
+  margin-left: 12px;
 }
 
 .description {
